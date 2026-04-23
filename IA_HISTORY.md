@@ -31,13 +31,16 @@
   Ej: "Cuando no sabía cómo estructurar el layout con Grid."
   Ej: "Al terminar el HTML, para verificar si me faltaba algo de accesibilidad."
   Ej: "Al principio del ejercicio de JS, para entender cómo arrancar."
--->
+--> Cuando observé y leí el documento, me di cuenta de que constantemente utilizaba DIV. Corregirlo a mano llevaría demasiado tiempo. 
 ```
 
 ### Lo que le pedí a la IA
 
 ```
 <!-- Pegá aquí el prompt exacto que escribiste. Debe ser el texto que vos escribiste, no la respuesta. -->
+
+En el siguiente documento index.html, no se respetan las etiquetas semánticas de HTML, utilizando constantemente DIV. A su vez, también utiliza los atributos correspondientes en cada caso: Por ejemplo, Alt para las descripciones de las imagenes. Asocia cada campo del formulario con su <label> correspondiente (usando for e id).
+
 ```
 
 ### Análisis del resultado obtenido
@@ -49,7 +52,7 @@
   - ¿Qué enfoque tomó la IA para resolver el problema?
   - ¿El resultado era lo que esperabas? ¿Por qué sí o por qué no?
   - ¿Qué parte te resultó útil como punto de partida?
--->
+--> La IA se enfocó en cambiar los elementos semánticos del HTML. El resultado fue lo que esperaba, pero aun así seguía utilizando DIV en diversas secciones.  Me resultó util como punto de partida el hecho de que en el documento original se especifique que era lo que había que cambiar.
 ```
 
 ### Qué debí corregir manualmente y por qué
@@ -63,7 +66,7 @@
   - ¿Por qué estaba técnicamente incorrecto o insuficiente?
   - ¿Qué cambiaste exactamente para que funcionara bien?
   Si no corregiste nada, explicá por qué el resultado era correcto tal como estaba.
--->
+-->El error era semántico, ya que continuaba utilizando DIV. Al leer el código, lo seguía utilizando. Estaba incorrecto debido a que le especifiqué que utilice las etiquetas sem´´anticas correspondiente en cada caso. Ya que llevó tiempo resolverlo, los cambios los hice manualmente. 
 ```
 
 ---
