@@ -57,7 +57,7 @@ El archivo se vincula desde el HTML con `<script src="script.js"></script>`. Ver
 - Sin números mágicos: usar las constantes declaradas como argumentos, no valores sueltos.
 
 ### 5. Uso Crítico de IA (completar `IA_HISTORY.md`)
-- Documentar **2 prompts** usados durante el examen.
+- Documentar **2 prompts** usados durante el examen
 - Para cada uno: qué le pediste a la IA, qué devolvió, y qué debiste corregir manualmente y por qué.
 
 ---

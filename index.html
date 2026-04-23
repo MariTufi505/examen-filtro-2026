@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<!-- Error: falta atributo lang -->
+<html lang="es">
 <html>
 <head>
-  <!-- Error: falta meta viewport (sitio no es responsive) -->
+  
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zara Darkbane — Chronicles of Code</title>
 
   <!-- Error: estilos embebidos en lugar de archivo externo -->
@@ -22,19 +23,35 @@
       border-bottom: 3px solid #e94560;
     }
 
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     .logo {
       color: #e94560;
       font-size: 1.4rem;
       font-weight: bold;
     }
 
-    /* Error: sin flexbox, navegación con display inline-block */
+    /* Navegación semántica */
+    .nav-links {
+      list-style: none;
+      display: inline-flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
     .nav-links a {
-      display: inline-block;
-      margin-right: 20px;
       text-decoration: none;
-      /* Error: muy bajo contraste sobre fondo oscuro */
-      color: #555;
+      color: #e94560;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
     }
 
     .hero {
@@ -144,13 +161,21 @@
       background: #0f3460;
     }
 
-    /* Error: campos sin estilos accesibles, sin indicador de foco visible */
+    /* Campos de formulario y labels */
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #e94560;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
     input, select {
       display: block;
       width: 100%;
       max-width: 500px;
       padding: 10px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       border: 1px solid #e94560;
       background: #16213e;
       color: #bbb;
@@ -158,7 +183,13 @@
       border-radius: 4px;
     }
 
-    /* Error: botón de envío como div, no como button */
+    input:focus, select:focus {
+      outline: none;
+      border-color: #fff;
+      box-shadow: 0 0 8px rgba(233, 69, 96, 0.5);
+    }
+
+    /* Botón semántico */
     .btn {
       display: inline-block;
       padding: 10px 28px;
@@ -167,6 +198,12 @@
       cursor: pointer;
       border-radius: 4px;
       font-size: 1rem;
+      border: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #d63a50;
     }
 
     .footer {
@@ -180,173 +217,149 @@
 </head>
 <body>
 
-  <!-- Error: div en lugar de header -->
-  <div class="header">
-    <!-- Error: div en lugar de nav -->
-    <div class="nav">
+  <header class="header">
+    <nav>
       <span class="logo">Chronicles of Code</span>
-      <!-- Error: div en lugar de ul/li para lista de navegación -->
-      <div class="nav-links">
-        <a href="#personaje">Personaje</a>
-        <a href="#stats">Stats</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#desafio">Desafiar</a>
-      </div>
-    </div>
-  </div>
+      <ul class="nav-links">
+        <li><a href="#personaje">Personaje</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#desafio">Desafiar</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Error: div en lugar de main -->
-  <div class="main">
 
-    <!-- Error: div en lugar de section -->
-    <div class="hero" id="personaje">
-      <!-- Error: img sin atributo alt -->
-      <img src="https://picsum.photos/seed/zara/120/120" class="avatar">
+  <main>
+
+    <section class="hero" id="personaje">
+      <img src="https://picsum.photos/seed/zara/120/120" class="avatar" alt="Avatar de Zara Darkbane, una hechicera de nivel 7">
       <div class="hero-text">
-        <!-- Error: div en lugar de h1 -->
-        <div class="hero-title" style="font-size: 2.5rem; font-weight: bold; color: #e94560;">Zara Darkbane</div>
-        <div class="class-badge">Hechicera</div>
-        <!-- Error: div en lugar de p -->
-        <div class="hero-bio" style="margin-top: 16px; max-width: 600px;">
+        <h1 class="hero-title" style="font-size: 2.5rem; font-weight: bold; color: #e94560;">Zara Darkbane</h1>
+        <span class="class-badge">Hechicera</span>
+        <p class="hero-bio" style="margin-top: 16px; max-width: 600px;">
           Invocadora de los planos oscuros, Zara domina el arte de la destrucción arcana.
           Sus hechizos pueden desintegrar escudos mágicos y paralizar a los enemigos más poderosos.
           Busca rivales que se atrevan a desafiarla.
-        </div>
-        <!-- Error: div en lugar de dl/dt/dd para lista de definición -->
-        <div class="hero-meta" style="margin-top: 20px;">
-          <div style="margin-bottom: 6px;"><span style="color: #e94560;">Nivel:</span> 7</div>
-          <div style="margin-bottom: 6px;"><span style="color: #e94560;">Alineación:</span> Neutral Maligna</div>
-          <div><span style="color: #e94560;">Origen:</span> Torre de los Arcanos</div>
-        </div>
+        </p>
+        <dl class="hero-meta" style="margin-top: 20px;">
+          <dt style="color: #e94560; font-weight: bold;">Nivel:</dt>
+          <dd style="margin-bottom: 6px;">7</dd>
+          <dt style="color: #e94560; font-weight: bold;">Alineación:</dt>
+          <dd style="margin-bottom: 6px;">Neutral Maligna</dd>
+          <dt style="color: #e94560; font-weight: bold;">Origen:</dt>
+          <dd>Torre de los Arcanos</dd>
+        </dl>
       </div>
-    </div>
+    </section>
 
-    <!-- Error: div en lugar de section -->
-    <div class="stats-section" id="stats">
-      <!-- Error: div en lugar de h2 -->
-      <div class="section-title">Stats de Combate</div>
+    <section class="stats-section" id="stats">
+      <h2 class="section-title">Stats de Combate</h2>
       <div class="stats-grid">
 
-        <!-- Error: div en lugar de article -->
-        <div class="stat-card">
-          <!-- Error: img de icono sin alt -->
-          <img src="https://picsum.photos/seed/heart/40/40" style="width: 40px; border-radius: 50%;">
+        <article class="stat-card">
+          <img src="https://picsum.photos/seed/heart/40/40" alt="Icono de vida: corazón rojo" style="width: 40px; border-radius: 50%;">
           <div class="stat-value">80</div>
           <div class="stat-label">Vida</div>
-        </div>
+        </article>
 
-        <div class="stat-card">
-          <!-- Error: img de icono sin alt -->
-          <img src="https://picsum.photos/seed/mana/40/40" style="width: 40px; border-radius: 50%;">
+        <article class="stat-card">
+          <img src="https://picsum.photos/seed/mana/40/40" alt="Icono de mana: esfera azul" style="width: 40px; border-radius: 50%;">
           <div class="stat-value">120</div>
           <div class="stat-label">Mana</div>
-        </div>
+        </article>
 
-        <div class="stat-card">
-          <!-- Error: img de icono sin alt -->
-          <img src="https://picsum.photos/seed/sword/40/40" style="width: 40px; border-radius: 50%;">
+        <article class="stat-card">
+          <img src="https://picsum.photos/seed/sword/40/40" alt="Icono de ataque: espada" style="width: 40px; border-radius: 50%;">
           <div class="stat-value">45</div>
           <div class="stat-label">Ataque</div>
-        </div>
+        </article>
 
-        <div class="stat-card">
-          <!-- Error: img de icono sin alt -->
-          <img src="https://picsum.photos/seed/shield/40/40" style="width: 40px; border-radius: 50%;">
+        <article class="stat-card">
+          <img src="https://picsum.photos/seed/shield/40/40" alt="Icono de defensa: escudo" style="width: 40px; border-radius: 50%;">
           <div class="stat-value">30</div>
           <div class="stat-label">Defensa</div>
-        </div>
+        </article>
 
       </div>
-    </div>
+    </section>
 
-    <!-- Error: div en lugar de section -->
-    <div class="skills-section" id="habilidades">
-      <!-- Error: div en lugar de h2 -->
-      <div class="section-title">Habilidades</div>
+    <section class="skills-section" id="habilidades">
+      <h2 class="section-title">Habilidades</h2>
 
-      <!-- Error: div en lugar de article -->
-      <div class="skill-card">
-        <!-- Error: div en lugar de h3 -->
-        <div class="skill-name" style="font-size: 1.1rem; font-weight: bold; color: #e94560;">Bola de Fuego</div>
-        <!-- Error: div en lugar de p -->
-        <div class="skill-desc">
+      <article class="skill-card">
+        <h3 class="skill-name" style="font-size: 1.1rem; font-weight: bold; color: #e94560;">Bola de Fuego</h3>
+        <p class="skill-desc">
           Lanza una esfera de fuego puro que explota al impacto, causando daño en área.
-        </div>
-        <div class="skill-cost">Costo: 30 de mana</div>
+        </p>
+        <p class="skill-cost">Costo: 30 de mana</p>
         <div class="tags">
           <span class="tag">Fuego</span>
           <span class="tag">Área</span>
           <span class="tag">Ofensivo</span>
         </div>
-      </div>
+      </article>
 
-      <div class="skill-card">
-        <div class="skill-name" style="font-size: 1.1rem; font-weight: bold; color: #e94560;">Escudo de Hielo</div>
-        <div class="skill-desc">
+      <article class="skill-card">
+        <h3 class="skill-name" style="font-size: 1.1rem; font-weight: bold; color: #e94560;">Escudo de Hielo</h3>
+        <p class="skill-desc">
           Crea una barrera de cristal helado que absorbe el siguiente golpe recibido.
-        </div>
-        <div class="skill-cost">Costo: 20 de mana</div>
+        </p>
+        <p class="skill-cost">Costo: 20 de mana</p>
         <div class="tags">
           <span class="tag">Hielo</span>
           <span class="tag">Defensivo</span>
         </div>
-      </div>
+      </article>
 
-      <div class="skill-card">
-        <div class="skill-name" style="font-size: 1.1rem; font-weight: bold; color: #e94560;">Rayo Carmesí</div>
-        <div class="skill-desc">
+      <article class="skill-card">
+        <h3 class="skill-name" style="font-size: 1.1rem; font-weight: bold; color: #e94560;">Rayo Carmesí</h3>
+        <p class="skill-desc">
           Canaliza energía arcana oscura y dispara un rayo que atraviesa cualquier escudo.
           Aturde al objetivo durante 2 turnos.
-        </div>
-        <div class="skill-cost">Costo: 50 de mana</div>
+        </p>
+        <p class="skill-cost">Costo: 50 de mana</p>
         <div class="tags">
           <span class="tag">Oscuro</span>
           <span class="tag">Aturdir</span>
           <span class="tag">Penetrante</span>
         </div>
-      </div>
+      </article>
 
-    </div>
+    </section>
 
-    <!-- Error: div en lugar de section -->
-    <div class="challenge-section" id="desafio">
-      <!-- Error: div en lugar de h2 -->
-      <div class="section-title">¿Te animás a desafiarla?</div>
-      <!-- Error: div en lugar de p -->
-      <div class="challenge-intro" style="margin-bottom: 24px; max-width: 600px;">
+    <section class="challenge-section" id="desafio">
+      <h2 class="section-title">¿Te animás a desafiarla?</h2>
+      <p class="challenge-intro" style="margin-bottom: 24px; max-width: 600px;">
         Registrá tu personaje para enfrentarte a Zara Darkbane en el próximo torneo.
         Solo los más valientes (o los más locos) se atreven.
-      </div>
-      <!-- Error: formulario sin labels, solo con placeholder -->
+      </p>
       <form id="challenge-form">
-        <!-- Error: input sin label asociado -->
-        <input type="text" id="challenger-name" placeholder="Nombre de tu personaje">
-        <!-- Error: input sin label asociado -->
-        <input type="text" id="challenger-class" placeholder="Clase (Guerrero, Arquero, Paladin...)">
-        <!-- Error: select sin label asociado -->
-        <select id="challenger-level">
+        <label for="challenger-name">Nombre de tu personaje:</label>
+        <input type="text" id="challenger-name" name="challenger-name" placeholder="Nombre de tu personaje" required>
+        
+        <label for="challenger-class">Clase:</label>
+        <input type="text" id="challenger-class" name="challenger-class" placeholder="Clase (Guerrero, Arquero, Paladin...)" required>
+        
+        <label for="challenger-level">Nivel:</label>
+        <select id="challenger-level" name="challenger-level" required>
           <option value="">Seleccioná tu nivel</option>
           <option value="1">Nivel 1 – 3</option>
           <option value="4">Nivel 4 – 6</option>
           <option value="7">Nivel 7 – 9</option>
           <option value="10">Nivel 10+</option>
         </select>
-        <!-- Error: div en lugar de button con type="submit" -->
-        <div class="btn" id="submit-btn">Inscribirme al torneo</div>
+        <button type="submit" class="btn" id="submit-btn">Inscribirme al torneo</button>
       </form>
-    </div>
+    </section>
 
-  </div><!-- /main -->
+  </main>
 
-  <!-- Error: div en lugar de footer -->
-  <div class="footer">
-    <!-- Error: div en lugar de p -->
-    <div>© 2025 Chronicles of Code — Todos los derechos reservados</div>
-    <!-- Error: div en lugar de p -->
-    <div>Zara Darkbane no se hace responsable por los daños causados en combate.</div>
-  </div>
+  <footer class="footer">
+    <p>© 2025 Chronicles of Code — Todos los derechos reservados</p>
+    <p>Zara Darkbane no se hace responsable por los daños causados en combate.</p>
+  </footer>
 
-  <!-- El alumno debe crear script.js y vincularlo aquí -->
   <script src="script.js"></script>
 
 </body>
