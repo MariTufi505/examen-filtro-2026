@@ -31,7 +31,7 @@
   Ej: "Cuando no sabía cómo estructurar el layout con Grid."
   Ej: "Al terminar el HTML, para verificar si me faltaba algo de accesibilidad."
   Ej: "Al principio del ejercicio de JS, para entender cómo arrancar."
---> Cuando observé y leí el documento, me di cuenta de que constantemente utilizaba DIV. Corregirlo a mano llevaría demasiado tiempo. 
+--> Cuando observé y leí el documento, me di cuenta de que constantemente utilizaba DIV en casos donde podrían utilizarse otras etiquetas semánticas del HTML. Intenté corregir algunos, pero corregirlo a mano llevaría demasiado tiempo.  
 ```
 
 ### Lo que le pedí a la IA
@@ -52,7 +52,9 @@ En el siguiente documento index.html, no se respetan las etiquetas semánticas d
   - ¿Qué enfoque tomó la IA para resolver el problema?
   - ¿El resultado era lo que esperabas? ¿Por qué sí o por qué no?
   - ¿Qué parte te resultó útil como punto de partida?
---> La IA se enfocó en cambiar los elementos semánticos del HTML. El resultado fue lo que esperaba, pero aun así seguía utilizando DIV en diversas secciones.  Me resultó util como punto de partida el hecho de que en el documento original se especifique que era lo que había que cambiar.
+--> La IA se enfocó en cambiar los elementos semánticos del HTML. 
+El resultado fue lo que esperaba en su mayoría, pero aun así seguía utilizando DIV en diversas secciones. Corrgirlos llevaría tiempo, por lo que preferí resolverlo en otro prompt incluyendo a su vez la accesibilidad. 
+Me resultó util como punto de partida el hecho de que en el documento original se especifique que era lo que había que cambiar. En el head del HTML, faltaban varios elementos importantes. La IA no lo resolvió, por lo que recurrí a otro lado para poder acordarme de las etiquetas o atributos faltantes: Lang, Viewport, Link. 
 ```
 
 ### Qué debí corregir manualmente y por qué
@@ -67,7 +69,7 @@ En el siguiente documento index.html, no se respetan las etiquetas semánticas d
   - ¿Qué cambiaste exactamente para que funcionara bien?
   Si no corregiste nada, explicá por qué el resultado era correcto tal como estaba.
 -->
-El error era semántico, ya que continuaba utilizando DIV. Al leer el código, lo seguía utilizando. Estaba incorrecto debido a que le especifiqué que utilice las etiquetas sem´´anticas correspondiente en cada caso. Ya que llevará tiempos resolverlos, preferí dejarlo para otro prompt y concentrarme en el CSS. 
+El error era semántico, ya que continuaba utilizando div. Al leer el código, lo seguía utilizando. Estaba incorrecto debido a que le especifiqué que utilice las etiquetas semánticas correspondiente en cada caso, destacando el hecho de que el Div era constantemente usado. Ya que llevará tiempos resolverlos, preferí dejarlo para otro prompt y concentrarme en el CSS. 
 ```
 
 ---
@@ -144,7 +146,7 @@ If the student writes incorrect code, explain the mistake clearly before showing
   - ¿Qué enfoque tomó la IA para resolver el problema?
   - ¿El resultado era lo que esperabas? ¿Por qué sí o por qué no?
   - ¿Qué parte te resultó útil como punto de partida?
---> La IA tomó el enfoque de crear el archivo con las especificaciones, teniendo en cuenta de que le he pedido que actue como un asistente de codigo de JAvascript que ayuda a un estudiante a completar un ejercicio de un personaje RPG. 
+--> La IA tomó el enfoque de crear el archivo con las especificaciones, teniendo en cuenta de que le he pedido que actue como un asistente de codigo de JAvascript que ayuda a un estudiante a completar un ejercicio de un personaje RPG. El resultado era el que esperaba, ya que al modificar los valores pude comprobar que se cumplían las condiciones. Me resultó útil como partida tener los valores de los cuales la IA debía guiarse, es decir, no tener que crear nuevos valores. De la misma manera, fue util poder tener los requerimientos de las funcionalidades que se necesitaba agregar al archivo js. 
 ```
 
 ### Qué debí corregir manualmente y por qué
