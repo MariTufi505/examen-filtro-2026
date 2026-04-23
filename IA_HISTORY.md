@@ -66,7 +66,8 @@ En el siguiente documento index.html, no se respetan las etiquetas semánticas d
   - ¿Por qué estaba técnicamente incorrecto o insuficiente?
   - ¿Qué cambiaste exactamente para que funcionara bien?
   Si no corregiste nada, explicá por qué el resultado era correcto tal como estaba.
--->El error era semántico, ya que continuaba utilizando DIV. Al leer el código, lo seguía utilizando. Estaba incorrecto debido a que le especifiqué que utilice las etiquetas sem´´anticas correspondiente en cada caso. Ya que llevó tiempo resolverlo, los cambios los hice manualmente. 
+-->
+El error era semántico, ya que continuaba utilizando DIV. Al leer el código, lo seguía utilizando. Estaba incorrecto debido a que le especifiqué que utilice las etiquetas sem´´anticas correspondiente en cada caso. Ya que llevará tiempos resolverlos, preferí dejarlo para otro prompt y concentrarme en el CSS. 
 ```
 
 ---
@@ -83,12 +84,55 @@ En el siguiente documento index.html, no se respetan las etiquetas semánticas d
   Ej: "Al terminar el HTML, para verificar si me faltaba algo de accesibilidad."
   Ej: "Al principio del ejercicio de JS, para entender cómo arrancar."
 -->
+En este punto, vi que había varias funcionalidades para agregar en el archivo script.js. Por esa razón, lo que hice fue utilizar Claude para brindarle lo que necesitaba hacer y a continuación pedirle que este me generara un prompt para darselo al chat de Visual Studio Code. Lo leí y modifiqué para que no me generara un archivo nuevo. 
 ```
 
 ### Lo que le pedí a la IA
 
 ```
 <!-- Pegá aquí el prompt exacto que escribiste. Debe ser el texto que vos escribiste, no la respuesta. -->
+
+You are a JavaScript coding assistant helping a student complete a RPG character exercise.
+
+The student must modify the JavaScript file script.js following these strict requirements:
+
+Character stats
+Declare the following variables using const or let as appropriate (never var):
+
+name (string): character name
+characterClass (string): class (e.g. warrior, mage)
+level (number): current level
+health (number): current health points
+mana (number): current mana points
+attack (number): attack value
+defense (number): defense value
+Functions to implement
+calculateDamage(attack, defense) — regular declared function
+
+Returns the difference between attack and defense
+If the result is negative, return 0 instead
+isAlive(health) — arrow function
+
+Returns true only if health is strictly greater than 0
+Negative values must also return false
+canCastSpell(currentMana, spellCost, isStunned) — arrow function
+
+Returns true only if there is enough mana AND the character is not stunned
+currentMana: available mana
+spellCost: mana cost of the spell
+isStunned: boolean
+getPresentation(name, characterClass, level) — regular declared function
+
+Returns a string in this exact format: 'Name — Class (Nivel N)'
+Example: 'Zara Darkbane — Hechicera (Nivel 7)'
+Required output
+Call each function using the declared variables as arguments (no magic numbers) and log each result with console.log.
+
+Rules you must enforce
+Never use var
+No magic numbers: always pass the declared variables as arguments
+Descriptive names only (no x, a, temp, etc.)
+If the student writes incorrect code, explain the mistake clearly before showing the fix
 ```
 
 ### Análisis del resultado obtenido
@@ -100,7 +144,7 @@ En el siguiente documento index.html, no se respetan las etiquetas semánticas d
   - ¿Qué enfoque tomó la IA para resolver el problema?
   - ¿El resultado era lo que esperabas? ¿Por qué sí o por qué no?
   - ¿Qué parte te resultó útil como punto de partida?
--->
+--> La IA tomó el enfoque de crear el archivo con las especificaciones, teniendo en cuenta de que le he pedido que actue como un asistente de codigo de JAvascript que ayuda a un estudiante a completar un ejercicio de un personaje RPG. 
 ```
 
 ### Qué debí corregir manualmente y por qué
@@ -115,6 +159,7 @@ En el siguiente documento index.html, no se respetan las etiquetas semánticas d
   - ¿Qué cambiaste exactamente para que funcionara bien?
   Si no corregiste nada, explicá por qué el resultado era correcto tal como estaba.
 -->
+Me pareció correcto ya que pude verificarlo en la consola del navegador. 
 ```
 
 ---
@@ -127,5 +172,5 @@ En el siguiente documento index.html, no se respetan las etiquetas semánticas d
   - ¿Qué tipo de errores repitió la IA que tuviste que corregir?
   - ¿Hubo algo que la IA resolvió bien a la primera sin que necesitaras tocarlo?
   - ¿Cambiarías la forma en que le pedís cosas a la IA la próxima vez? ¿Por qué?
--->
+--> Tuve que corregir el uso del div en el archivo html. Lo que resolvió bien a la primera es el haber creado las funciones en JavaScript con los detalles del personaje. Si, le cambiaría mi manera de pedirle los cambios y ser mucho más especifica, brindandole un mayor contexto. 
 ```
