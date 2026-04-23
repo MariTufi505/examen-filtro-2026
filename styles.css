@@ -266,6 +266,9 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
 }
 
 .tag {
@@ -296,6 +299,21 @@ nav {
 /* ============================================
    FORM ELEMENTS
    ============================================ */
+fieldset {
+  border: 2px solid var(--accent-primary);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: rgba(255, 107, 107, 0.05);
+}
+
+legend {
+  color: var(--accent-primary);
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0 12px;
+}
+
 label {
   display: block;
   margin-bottom: 8px;
